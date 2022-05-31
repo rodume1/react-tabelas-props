@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+/*
+*App.js
+*/
+import Tabela from "./Tabela";
+import Tabela02 from "./Tabela02";
+import Tabela03 from "./Tabela03";
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  render(){
+
+    //define the data that is going to be used by Table03
+    const students = [
+      {
+        name:"Ana",
+        surname:"Graquio",      
+      },
+      {
+        name:"Danil",
+        surname:"Graqua",      
+      },
+      {
+        name:"Refactor",
+        surname:"Product",      
+      },
+      {
+        name:"Rodrigo",
+        surname:"Bendes",      
+      },
+    ]
+
+    return(
+      <div className="container">
+        {/* we are using JSX. 'className' will be changed, in execution mode, to 'class' */}
+
+        <h1>First Student's lists</h1>
+        <Tabela />
+
+        <br></br>
+        <h1>Second Student's lists</h1>
+        <Tabela02 />
+
+        <br></br>
+        <h1>Third Student's lists</h1>
+        <Tabela03 studentsDataIN={students}/>
+      </div>
+    )
+  }
 }
 
 export default App;
